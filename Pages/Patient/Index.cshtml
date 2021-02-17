@@ -1,0 +1,62 @@
+﻿@page
+@inject SignInManager<ApplicationUser> signInManager;
+@model iMed.Pages.Patient.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/ListPages.css" rel="stylesheet" />
+<div class="list">
+    <div class="list-head">
+        <span>First Name</span>
+        <span>Last Name</span>
+        <span>Email</span>
+        <span>Phone number</span>
+    </div>
+    @foreach (var item in Model.patients)
+    {
+        <div class="list-body">
+
+            <div class="list-body-content">
+                <input class="profile-image" type="image" src="data:image/gif;base64,@item.Base64" onerror="this.src = '~/images/Default-welcomer.png'" />
+
+                <div class="list-body-details">
+                    <span>@Html.DisplayFor(modelItem => item.FirstName)</span>
+                    <span>@Html.DisplayFor(modelItem => item.LastName)</span>
+                    <span>@Html.DisplayFor(modelItem => item.Email)</span>
+                    <span>@Html.DisplayFor(modelItem => item.Phone)</span>
+                    <div class="btn-group dropdown-me">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-page="/Patient/View" asp-route-id="@item.Id">Details</a>
+
+                            @if (User.IsInRole("Manager") || User.IsInRole("Doctor"))
+                            {
+                                <a class="dropdown-item" asp-page="/Patient/Edit" asp-route-id="@item.Id">Edit</a>
+                            }
+                            @if (User.IsInRole("Manager") || User.IsInRole("Doctor"))
+                            {
+                                <a class="dropdown-item" asp-controller="User" asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
+                            }
+                        </div>
+                    </div>
+                    <div class="clear-both"></div>
+
+                </div>
+            </div>
+        </div>
+    }
+    @{
+        var prevDisabled = !Model.patients.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.patients.HasNextPage ? "disabled" : "";
+    }
+
+<div class="pagination justify-content-end" style="margin-right:350px;margin-top:40px;">
+    <a asp-page="./Index" asp-route-pageIndex="@(Model.patients.PageIndex - 1)" class="btn btn-primary @prevDisabled" style="margin-right:7px;">
+        Previous
+    </a>
+    <a asp-page="./Index" asp-route-pageIndex="@(Model.patients.PageIndex + 1)" class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+</div>
+</div>

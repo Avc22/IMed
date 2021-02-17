@@ -1,0 +1,178 @@
+﻿/*MY CODE*/
+html, body {
+    height: 100%;
+}
+
+.profile-image {
+    width:70px !important;
+    height: 70px !important;
+    border-radius: 30px;
+}
+
+.navigation {
+    position: fixed;
+    width: 50px;
+    height: 100%;
+    background-color: #5DBEFF;
+}
+
+.doctor-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: -5px;
+}
+
+.announcement-img-nav {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+.patient-icon {
+    width: 45px;
+    height: 45px;
+    margin-left: 2px;
+}
+
+.home-icon {
+    width: 45px;
+    height: 45px;
+    margin-left: 2px;
+}
+
+.doctors-text {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    padding: 15px 15px 15px 15px;
+    background-color: #00c8ff;
+    color: white;
+    font-weight: 600;
+}
+
+.doctors-link:hover .doctors-text {
+    display: block;
+}
+
+.announcement-text-nav {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 273px;
+    padding: 15px 15px 15px 15px;
+    background-color: #00c8ff;
+    color: white;
+    font-weight: 600;
+}
+
+.announcement-nav:hover .announcement-text-nav {
+    display: block;
+}
+
+
+.home-text {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    padding: 15px 15px 15px 15px;
+    background-color: #00c8ff;
+    color: white;
+    font-weight: 600;
+}
+
+.home-link:hover .home-text {
+    display: block;
+}
+
+
+.patients-text {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 194px;
+    padding: 15px 15px 15px 15px;
+    background-color: #00c8ff;
+    color: white;
+    font-weight: 600;
+}
+
+.patients-link:hover .patients-text {
+    display: block;
+}
+
+.settings-text {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 266px;
+    padding: 15px 15px 15px 15px;
+    background-color: #00c8ff;
+    color: white;
+    font-weight: 600;
+}
+
+.settings-link:hover .settings-text {
+    display: block;
+}
+
+.account-area {
+    font-size: 17px;
+    font-weight: 600;
+    margin-right: 25px;
+}
+
+.header {
+    height: 200px;
+    clear: both;
+}
+
+.img {
+    position: absolute;
+}
+
+.grid-layout-item {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+    .grid-layout-item > div {
+        position: absolute;
+        right:25px;
+        top: 10px;
+        font-family: Corbel;
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+.grid-layout-item1 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 0 auto;
+}
+
+.grid-layout-item2 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid-layout-item3 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-rows: 25px auto auto;
+    grid-template-columns: 55px 96%;
+    grid-gap: 0px;
+}

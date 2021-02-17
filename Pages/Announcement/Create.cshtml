@@ -1,0 +1,21 @@
+﻿@page
+@model iMed.Pages.Announcement.CreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/Announcement.css" rel="stylesheet" />
+<div class="create-announcement">
+    <form method="post">
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" asp-for="an.Title" />
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control" asp-for="an.Text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-secondary">Add announcement</button>
+    </form>
+</div>

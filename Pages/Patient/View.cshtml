@@ -1,0 +1,95 @@
+﻿@page
+@model iMed.Pages.Patient.ViewModel
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/ViewPage.css" rel="stylesheet" />
+
+<div class="content grid">
+    <div class="grid-item">
+        Patient Details
+    </div>
+    <div class="grid-item1">
+        <div class="form-item">
+            <input type="image" src="data:image/gif;base64,@Model.base64" style="width:200px;border-radius:100px;height:200px;"/> 
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.FirstName"></label>
+            <p> @Model.PatientV.FirstName</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.LastName"></label>
+            <p>@Model.PatientV.LastName</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.Email"></label>
+            <p>@Model.PatientV.Email</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.PhoneNumber"></label>
+            <p>@Model.PatientV.PhoneNumber</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.Sex"></label>
+            <p>@Model.PatientV.Sex</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.Birthday"></label>
+            <p>@Model.PatientV.Birthday</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.Weigth"></label>
+            <p>@Model.PatientV.Weigth</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.Heigth"></label>
+            <p>@Model.PatientV.Heigth</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.MedicalH.BloodType"></label>
+            <p>@Model.PatientV.MedicalH.BloodType</p>
+        </div><hr />
+
+        <div class="form-item">
+            <label asp-for="PatientV.MedicalH.isSmoker"></label>
+            <p>@Model.PatientV.MedicalH.isSmoker</p>
+        </div>
+    </div>
+
+    <div class="grid-item2">
+        <div>
+            <label asp-for="PatientV.MedicalH.CurrentMedication"></label><hr />
+            <p>@Model.PatientV.MedicalH.CurrentMedication</p>
+        </div>
+
+        <div>
+            <label asp-for="PatientV.MedicalH.Allergies"></label><hr />
+            <p>@Model.PatientV.MedicalH.Allergies</p>
+        </div>
+
+        <div>
+            <label asp-for="PatientV.MedicalH.FamilyMedicalHistory"></label><hr />
+            <p>@Model.PatientV.MedicalH.FamilyMedicalHistory</p>
+        </div>
+
+        <div>
+            <label asp-for="PatientV.MedicalH.MedicalIssues"></label><hr />
+            <p>@Model.PatientV.MedicalH.MedicalIssues</p>
+        </div>
+
+        <div>
+            <label asp-for="PatientV.MedicalH.PastSurgeries"></label><hr />
+            <p>@Model.PatientV.MedicalH.PastSurgeries</p>
+        </div>
+    </div>
+</div>

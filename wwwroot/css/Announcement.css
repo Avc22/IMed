@@ -1,0 +1,57 @@
+﻿.create-ann-btn{
+    position:absolute;
+    right:300px;
+}
+
+.create-announcement {
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    padding: 25px;
+    margin-top: -30px;
+}
+
+.ann-delete{
+    float:right;
+    margin-left:15px;
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    font-size:20px;
+    line-height:22px;
+}
+
+.announcement {
+    width: 850px;
+    margin: 0 auto;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+.head{
+    height: 40px;
+    background-color: #5DBEFF;
+    color:white;
+    padding:7px;
+}
+.time{
+    display:inline-block;
+    float:right;
+    margin-right:3px;
+    color:white;
+}
+.date{
+    margin:3px;
+    text-align:right;
+}
+
+.message{
+    padding:10px;
+}

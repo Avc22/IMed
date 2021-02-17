@@ -1,0 +1,120 @@
+﻿@page
+@model iMed.Pages.Patient.EditModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/EditPage.css" rel="stylesheet" />
+
+<form method="post" enctype="multipart/form-data">
+    <div class="page-content">
+        <div class="edit-form">
+            <div class="grid-item"><span>Account Settings</span></div>
+            
+            <div class="grid-item1">
+
+                <div class="form-group">
+                    <input class="image" type="image" src="data:image/gif;base64,@Model.pictureBase64"/>
+                    <input asp-for="FileUpload.FormFile" type="file" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.FirstName"></label><br />
+                    <input class="form-control" asp-for="patientView.FirstName" />
+                    <span asp-validation-for="patientView.FirstName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.LastName"></label><br />
+                    <input class="form-control" asp-for="patientView.LastName" />
+                    <span asp-validation-for="patientView.LastName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.Email"></label><br />
+                    <input class="form-control" asp-for="patientView.Email" />
+                    <span asp-validation-for="patientView.Email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.PhoneNumber"></label><br />
+                    <input class="form-control" asp-for="patientView.PhoneNumber" />
+                    <span asp-validation-for="patientView.PhoneNumber"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.Birthday"></label><br />
+                    <input class="form-control" asp-for="patientView.Birthday" />
+                    <span asp-validation-for="patientView.Birthday"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.Sex"></label><br />
+                    <input class="form-control" asp-for="patientView.Sex" />
+                    <span asp-validation-for="patientView.Sex"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.Weigth"></label><br />
+                    <input class="form-control" asp-for="patientView.Weigth" />
+                    <span asp-validation-for="patientView.Weigth"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.Heigth"></label><br />
+                    <input class="form-control" asp-for="patientView.Heigth" />
+                    <span asp-validation-for="patientView.Heigth"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="patientView.MedicalH.BloodType"></label><br />
+                    <input class="form-control" asp-for="patientView.MedicalH.BloodType" />
+                    <span asp-validation-for="patientView.MedicalH.BloodType"></span>
+                </div>
+
+                <div class="form-check form-check-inline checkbox">
+                    <input class="form-check-input" asp-for="patientView.MedicalH.isSmoker" />
+                    <label class="form-check-label" asp-for="patientView.MedicalH.isSmoker"></label>
+                    <span asp-validation-for="patientView.MedicalH.isSmoker"></span>
+                </div>
+            </div>
+
+            <div class="grid-item2">
+                <div class="med-hist-form">
+
+
+                    <div class="form-group">
+                        <label asp-for="patientView.MedicalH.CurrentMedication"></label><br />
+                        <textarea class="form-control" asp-for="patientView.MedicalH.CurrentMedication"></textarea>
+                        <span asp-validation-for="patientView.MedicalH.CurrentMedication"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="patientView.MedicalH.MedicalIssues"></label><br />
+                        <textarea class="form-control" asp-for="patientView.MedicalH.MedicalIssues"></textarea>
+                        <span asp-validation-for="patientView.MedicalH.MedicalIssues"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="patientView.MedicalH.FamilyMedicalHistory"></label><br />
+                        <textarea class="form-control" asp-for="patientView.MedicalH.FamilyMedicalHistory"></textarea>
+                        <span asp-validation-for="patientView.MedicalH.FamilyMedicalHistory"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="patientView.MedicalH.PastSurgeries"></label><br />
+                        <textarea class="form-control" asp-for="patientView.MedicalH.PastSurgeries"></textarea>
+                        <span asp-validation-for="patientView.MedicalH.PastSurgeries"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="patientView.MedicalH.Allergies"></label><br />
+                        <textarea class="form-control" asp-for="patientView.MedicalH.Allergies"></textarea>
+                        <span asp-validation-for="patientView.MedicalH.Allergies"></span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-sm save-btn grid-item3" type="submit">Save changes</button>
+        </div>
+    </div>
+</form>

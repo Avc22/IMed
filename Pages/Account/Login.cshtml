@@ -1,0 +1,39 @@
+﻿@page
+@model iMed.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/RegisterForm.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="register-form">
+
+
+        <div class="form-header">
+            <span>Sign in</span><br />
+        </div>
+        <div asp-validation-summary="All"></div>
+
+        <div class="body-form">
+            <div class="group form-group">
+                <label asp-for="loginViewModel.Email"></label>
+                <input class="form-control" asp-for="loginViewModel.Email" />
+                <span asp-validation-for="loginViewModel.Email"></span>
+            </div>
+            <div class="group form-group">
+                <label asp-for="loginViewModel.Password"></label>
+                <input class="form-control" asp-for="loginViewModel.Password" />
+                <span asp-validation-for="loginViewModel.Password"></span>
+
+            </div>
+            <div class="group form-group">
+                <label asp-for="loginViewModel.RememberMe"></label>
+                <input class="form-control" style="width:15px; height:10px;" type="checkbox" asp-for="loginViewModel.RememberMe" />
+                <span asp-validation-for="loginViewModel.RememberMe"></span>
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Login</button>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,50 @@
+﻿@page
+@model iMed.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/RegisterForm.css" rel="stylesheet" />
+
+
+<form method="post">
+
+    <div class="register-form">
+        <div class="form-header">
+            <span>Sign up</span><br />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="body-form">
+            <div class="register-group form-group">
+                <label asp-for="registerModel.FirstName"></label>
+                <input class="form-control" asp-for="registerModel.FirstName" />
+                <span asp-validation-for="registerModel.FirstName"></span>
+            </div>
+
+            <div class="register-group form-group">
+                <label asp-for="registerModel.LastName"></label>
+                <input class="form-control" asp-for="registerModel.LastName" />
+                <span asp-validation-for="registerModel.LastName"></span>
+            </div>
+
+            <div class="register-group form-group">
+                <label asp-for="registerModel.Email"></label>
+                <input class="form-control" asp-for="registerModel.Email" />
+                <span asp-validation-for="registerModel.Email"></span>
+            </div>
+
+            <div class="register-group form-group">
+                <label asp-for="registerModel.Password"></label>
+                <input class="form-control" asp-for="registerModel.Password" />
+                <span asp-validation-for="registerModel.Password"></span>
+            </div>
+
+            <div class="register-group form-group">
+                <label asp-for="registerModel.ConfirmPassword"></label>
+                <input class="form-control" asp-for="registerModel.ConfirmPassword" />
+                <span asp-validation-for="registerModel.ConfirmPassword"></span>
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Register</button>
+        </div>
+    </div>
+</form>

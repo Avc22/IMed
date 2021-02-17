@@ -1,0 +1,52 @@
+﻿@page
+@model iMed.Pages.Doctor.ViewModel
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+    <link href="~/css/ViewPage.css" rel="stylesheet" />
+
+    <div class="main-contentt">
+
+        <div class="image">
+            <div class="form-item">
+                <input type="image" src="data:image/gif;base64,@Model.base64" />
+            </div>
+            <div class="blue-line"></div>
+        </div>
+
+        <div class="names">
+            <div class="form-item st">
+                <label asp-for="Doctor.FirstName"></label>
+                <p> @Model.Doctor.FirstName</p>
+            </div>
+            <div class="form-item dr">
+                <label asp-for="Doctor.LastName"></label>
+                <p>@Model.Doctor.LastName</p>
+            </div>
+        </div>
+        
+
+        <div class="email-phone ">
+            <div class="form-item st">
+                <label asp-for="Doctor.Email"></label>
+                <p>@Model.Doctor.Email</p>
+            </div>
+            <div class="form-item dr">
+                <label asp-for="Doctor.PhoneNumber"></label>
+                <p>@Model.Doctor.PhoneNumber</p>
+            </div>
+        </div>
+
+        <div class="sex-spec">
+            <div class="form-item st">
+                <label asp-for="Doctor.Sex"></label>
+                <p>@Model.Doctor.Sex</p>
+            </div>
+            <div class="form-item dr">
+                <label asp-for="Doctor.Specialization"></label>
+                <p>@Model.Doctor.Specialization</p>
+            </div>
+        </div>
+    </div>

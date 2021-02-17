@@ -1,0 +1,62 @@
+﻿@page
+@model iMed.Pages.Doctor.EditModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/EditPage.css" rel="stylesheet" />
+<form method="post" enctype="multipart/form-data">
+    <div class="page-content" style="width:800px;">
+        <div class="edit-form">
+            <div class="grid-item"><span>Account Settings</span></div>
+
+            <div class="grid-item1"style="margin-left: 60px;">
+
+                <div class="form-group">
+                    <input class="image" type="image" src="data:image/gif;base64,@Model.pictureBase64" />
+                    <input asp-for="FileUpload.FormFile" type="file" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.FirstName"></label><br />
+                    <input class="form-control" asp-for="Doctor.FirstName" />
+                    <span asp-validation-for="Doctor.FirstName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.LastName"></label><br />
+                    <input class="form-control" asp-for="Doctor.LastName" />
+                    <span asp-validation-for="Doctor.LastName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Email"></label><br />
+                    <input class="form-control" asp-for="Doctor.Email" />
+                    <span asp-validation-for="Doctor.Email"></span>
+                </div>
+            </div>
+            <div class="grid-item2" style="margin-top:120px;margin-left: 150px;">
+                <div class="form-group">
+                    <label asp-for="Doctor.PhoneNumber"></label><br />
+                    <input class="form-control" asp-for="Doctor.PhoneNumber" />
+                    <span asp-validation-for="Doctor.PhoneNumber"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Specialization"></label><br />
+                    <input class="form-control" asp-for="Doctor.Specialization" />
+                    <span asp-validation-for="Doctor.Specialization"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Sex"></label><br />
+                    <input class="form-control" asp-for="Doctor.Sex" />
+                    <span asp-validation-for="Doctor.Sex"></span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-sm save-btn grid-item3" type="submit">Save changes</button>
+
+        </div>
+    </div>
+</form>

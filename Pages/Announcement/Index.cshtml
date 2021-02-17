@@ -1,0 +1,46 @@
+﻿@page
+@model iMed.Pages.Announcement.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/Announcement.css" rel="stylesheet" />
+@if (User.IsInRole("Manager"))
+{
+    @if (User.IsInRole("Manager"))
+    {
+        <a class="btn btn-outline-danger create-ann-btn" asp-page="/Announcement/Create">Create announcement</a>
+    }
+}
+@foreach (var item in @Model.anc)
+{
+    <div class="announcement">
+        <div class="head">
+            <div class="title">
+                @item.Title
+                <div class="time">
+                    @item.Hour
+                    @if (User.IsInRole("Manager"))
+                    {
+                        <a class="ann-delete" asp-controller="Announcement" asp-action="Delete" asp-route-id=@item.Id>X</a>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <div class="message">
+            <div class="text">
+                @item.Text
+            </div>
+            <div class="date">
+                @item.Date
+            </div>
+        </div>
+
+    </div>
+
+
+
+}

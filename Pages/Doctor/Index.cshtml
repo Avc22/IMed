@@ -1,0 +1,64 @@
+﻿@page
+@model iMed.Pages.Doctor.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link href="~/css/ListPages.css" rel="stylesheet" />
+<div class="list">
+    <div class="list-head">
+        <span>First Name</span>
+        <span>Last Name</span>
+        <span>Email</span>
+
+        <span>Specialization</span>
+        @if (User.IsInRole("Manager"))
+        {
+            <a asp-page="/Doctor/Create" class="btn btn-outline-danger create-doctor-btn">+</a>
+            <span id="add-doctor-text">Add doctor</span>
+        }
+    </div>
+    @foreach (var item in Model.doctors)
+    {
+        <div class="list-body">
+            <div class="list-body-content">
+                <input class="profile-image" type="image" src="data:image/gif;base64, @item.Picture" />
+                <div class="list-body-details">
+                    <span>@Html.DisplayFor(modelItem => item.FirstName)</span>
+                    <span>@Html.DisplayFor(modelItem => item.LastName)</span>
+                    <span>@Html.DisplayFor(modelItem => item.Email)</span>
+
+                    <span>@Html.DisplayFor(modelItem => item.Specialization)</span>
+                    <div class="btn-group dropdown-me">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-page="/Doctor/View" asp-route-id="@item.Id">Details</a>
+
+                            @if (User.IsInRole("Manager"))
+                            {
+                                <a class="dropdown-item" asp-page="/Doctor/Edit" asp-route-id="@item.Id">Edit</a>
+                            }
+                            @if (User.IsInRole("Manager"))
+                            {
+                                <a class="dropdown-item" asp-controller="User" asp-action="DeleteUserD" asp-route-id="@item.Id">Delete</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @{
+        var prevDisabled = !Model.doctors.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.doctors.HasNextPage ? "disabled" : "";
+    }
+
+<div class="pagination justify-content-end" style="margin-right:350px;margin-top:40px;">
+    <a asp-page="./Index" asp-route-pageIndex="@(Model.doctors.PageIndex - 1)" class="btn btn-primary @prevDisabled" style="margin-right:7px;">
+        Previous
+    </a>
+    <a asp-page="./Index" asp-route-pageIndex="@(Model.doctors.PageIndex + 1)" class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+</div>
+</div>

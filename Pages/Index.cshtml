@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/css/MainPage.css" />
+
+<div class="grid">
+    <div class="bg-image">
+        <img src="~/images/bg-landing-page.png" />
+    </div>
+    <div class="text">
+        <div class="text__welcome">Welcome to <span>IMed</span></div>
+        <div class="text__what-we-do">Our platform provides a better way to store medical records</div>
+    </div>
+    <div class="buttons">
+        <a asp-page="/Account/Register" >Sign up</a>
+        <a asp-page="/Account/Login" >Sign in</a>
+    </div>
+
+</div>

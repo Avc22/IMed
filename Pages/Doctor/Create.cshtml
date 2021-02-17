@@ -1,0 +1,55 @@
+﻿@page
+@model iMed.Pages.Doctor.CreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+    <link href="~/css/CreateDoctor.css" rel="stylesheet" />
+<div>
+    <form enctype="multipart/form-data" method="post">
+          
+        <div class="create-main">
+            <div class="create-main-head">
+                Add doctor
+            </div>
+            <div class="padding">
+                <div class="form-group">
+                    <label asp-for="Doctor.FirstName"></label>
+                    <input class="form-control" asp-for="Doctor.FirstName" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.LastName"></label>
+                    <input class="form-control" asp-for="Doctor.LastName" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Email"></label>
+                    <input class="form-control" asp-for="Doctor.Email" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Sex"></label>
+                    <input class="form-control" asp-for="Doctor.Sex" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.Specialization"></label>
+                    <input class="form-control" asp-for="Doctor.Specialization" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Doctor.Password"></label>
+                    <input class="form-control" asp-for="Doctor.Password" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Doctor.ConfirmPassword"></label>
+                    <input class="form-control" asp-for="Doctor.ConfirmPassword" />
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary">Create doctor</button>
+            </div>
+        </div>
+    </form>
+</div>
+
